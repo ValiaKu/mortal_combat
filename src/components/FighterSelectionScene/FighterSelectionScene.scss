@@ -11,27 +11,64 @@
   gap: 10px;
 }
 
+h2 {
+  text-align: center;
+  font-size: 4rem;
+  color: gainsboro;
+  text-shadow: 1px 1px 1px black;
+}
+
 .fighter {
   padding: 0;
   cursor: pointer;
   margin: 0;
   border: solid 1px gainsboro;
-  height: 200px;
+  height: 150px;
   width: 150px;
   overflow: hidden;
   position: relative;
   background-color: black;
+  text-align: center;
+  transition: 0.8s;
 }
 
 .fighter span {
   position: absolute;
-  bottom: 5px;
-  font-size: 1.5rem;
+  bottom: 0;
+  font-size: 2.5rem;
   background-color: black;
   width: 100%;
   text-align: center;
+  z-index: 1;
+}
+
+.fighter:nth-child(1) img {
+  top: -150px;
+}
+
+.fighter:nth-child(5) img {
+  top: -50px;
+}
+
+.fighter:nth-child(6) img {
+  left: -25%;
+}
+
+.fighter:nth-child(8) img {
+  top: -50px;
 }
 
 .fighter img {
-  width: 200px;
+  width: 300px;
+  position: relative;
+  left: -50%;
+  transition: 0.8s;
+}
+
+.fighter:hover {
+  border-color: red;
+  outline: solid 3px red;
+}
+.fighter:hover img {
+  transform: scale(1.1);
 }

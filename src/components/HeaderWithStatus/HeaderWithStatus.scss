@@ -1,0 +1,28 @@
+.header {
+  margin: 0 auto;
+  width: fit-content;
+  text-align: center;
+}
+
+h1 {
+  font-size: 5rem;
+  color: red;
+  text-shadow: 1px 1px 1px white;
+  line-height: 1;
+}
+
+img {
+  width: 100px;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.players-box {
+  font-size: 1.5rem;
+  color: black;
+  font-family: Roboto, sans-serif;
+
+  background-color: rgba(255, 255, 255, 0.9);
+  width: fit-content;
+  margin: 55px auto;
+}

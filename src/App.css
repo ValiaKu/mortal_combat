@@ -2,6 +2,9 @@
   font-family: MKX;
   src: local("MK"), url("assets/fonts/MKX-Title.otf") format("opentype");
 }
+html {
+  font-size: 62.5%;
+}
 body {
   margin: 0;
   padding: 0;
@@ -10,4 +13,5 @@ body {
   background-size: cover;
   height: 100vh;
   font-family: MKX, sans-serif;
+  font-size: 1rem;
 }

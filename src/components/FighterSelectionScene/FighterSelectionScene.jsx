@@ -61,6 +61,11 @@ function FighterSelectionScene() {
     },
     {
       id: uuid(),
+      name: "Sonia",
+      image: "/content/characters/sonia.png",
+    },
+    {
+      id: uuid(),
       name: "Shan-Tsun",
       image: "/content/characters/shantsun.png",
     },
@@ -73,12 +78,6 @@ function FighterSelectionScene() {
       id: uuid(),
       name: "Sindel",
       image: "/content/characters/sindel.png",
-    },
-
-    {
-      id: uuid(),
-      name: "Sonia",
-      image: "/content/characters/sonia.png",
     },
   ];
 
