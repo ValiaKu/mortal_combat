@@ -1,9 +1,13 @@
+@font-face {
+  font-family: MKX;
+  src: local("MK"), url("assets/fonts/MKX-Title.otf") format("opentype");
+}
 body {
   margin: 0;
   padding: 0;
   background: black url(./assets/images/metal-bg.jpg);
   color: white;
   background-size: cover;
-
   height: 100vh;
+  font-family: MKX, sans-serif;
 }

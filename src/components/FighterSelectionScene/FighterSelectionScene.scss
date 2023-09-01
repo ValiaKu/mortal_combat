@@ -1,8 +1,12 @@
 .fighter-selection-box {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-template-rows: repeat(3, auto);
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  width: fit-content;
+  padding: 10px;
+  margin: 0 auto;
   border: solid 10px gainsboro;
   gap: 10px;
 }
@@ -16,12 +20,16 @@
   width: 150px;
   overflow: hidden;
   position: relative;
+  background-color: black;
 }
 
 .fighter span {
   position: absolute;
   bottom: 5px;
   font-size: 1.5rem;
+  background-color: black;
+  width: 100%;
+  text-align: center;
 }
 
 .fighter img {
