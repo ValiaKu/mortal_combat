@@ -1,16 +1,20 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import clsx from "clsx";
 import { v4 as uuid } from "uuid";
 import styles from "./FighterSelectionScene.module.scss";
 
 function FighterSelectionScene() {
+  const [selectedFighterIndex, setSelectedFighterIndex] = useState(0);
+
   useEffect(() => {
     const handleKeyDown = (event) => {
       switch (event.key) {
         case "ArrowLeft":
+          setSelectedFighterIndex((prevIndex) => prevIndex - 1);
           console.log("arrow left");
           break;
         case "ArrowRight":
+          setSelectedFighterIndex((prevIndex) => prevIndex + 1);
           console.log("arrow right");
           break;
         case "ArrowUp":
@@ -113,11 +117,11 @@ function FighterSelectionScene() {
     <>
       <h2>Fighters</h2>
       <div className={styles.fighterSelectionBox}>
-        {fighters.map((fighter) => (
+        {fighters.map((fighter, index) => (
           <div
             key={fighter.id}
             className={clsx(styles.fighter, {
-              [styles.fighterActive]: true,
+              [styles.fighterActive]: index === selectedFighterIndex,
             })}>
             <span>{fighter.name}</span>
             <img src={fighter.image} alt={fighter.name} />
