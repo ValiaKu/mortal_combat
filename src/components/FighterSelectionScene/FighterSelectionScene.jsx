@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-
+import clsx from "clsx";
 import { v4 as uuid } from "uuid";
 import styles from "./FighterSelectionScene.module.scss";
 
@@ -114,7 +114,11 @@ function FighterSelectionScene() {
       <h2>Fighters</h2>
       <div className={styles.fighterSelectionBox}>
         {fighters.map((fighter) => (
-          <div key={fighter.id} className={styles.fighter}>
+          <div
+            key={fighter.id}
+            className={clsx(styles.fighter, {
+              [styles.fighterActive]: true,
+            })}>
             <span>{fighter.name}</span>
             <img src={fighter.image} alt={fighter.name} />
           </div>
