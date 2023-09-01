@@ -21,8 +21,12 @@ img {
   font-size: 1.5rem;
   color: black;
   font-family: Roboto, sans-serif;
-
   background-color: rgba(255, 255, 255, 0.9);
   width: fit-content;
   margin: 55px auto;
+}
+
+span {
+  display: inline-block;
+  margin-right: 30px;
 }

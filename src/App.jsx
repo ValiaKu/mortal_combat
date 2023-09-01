@@ -17,11 +17,14 @@ function App() {
 
   return (
     <main>
-      <HeaderWithStatus turn={0} />
+      <HeaderWithStatus
+        selectedFighterFirst={selectedFighter.name}
+        selectedFighterSecond={selectedFighter.name}
+      />
       <FighterSelectionScene onFighterSelect={handleFighterSelect} />
       {selectedFighter && (
         <div className='selected-fighter'>
-          <h2>Selected Fighter:</h2>
+          <h2>Selected Fighters:</h2>
           <img src={selectedFighter.image} alt={selectedFighter.name} />
           <h3>{selectedFighter.name}</h3>
         </div>
