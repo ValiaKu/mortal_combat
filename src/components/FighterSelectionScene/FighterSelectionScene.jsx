@@ -18,10 +18,16 @@ function FighterSelectionScene() {
           console.log("arrow right");
           break;
         case "ArrowUp":
-          console.log("arrow up");
+          setSelectedFighterIndex((prevIndex) =>
+            prevIndex < 5 ? fighters.length - 5 : prevIndex - 5
+          );
+          console.log("arrow up", selectedFighterIndex);
           break;
         case "ArrowDown":
-          console.log("arrow down");
+          setSelectedFighterIndex((prevIndex) =>
+            prevIndex > fighters.length - 5 ? prevIndex - 5 : prevIndex + 5
+          );
+          console.log("arrow down", selectedFighterIndex);
           break;
 
         default:
@@ -32,7 +38,7 @@ function FighterSelectionScene() {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [selectedFighterIndex]);
 
   const fighters = [
     {

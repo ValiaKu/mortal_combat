@@ -65,12 +65,11 @@ h2 {
   transition: 0.8s;
 }
 
-.fighter:hover,
 .fighterActive {
   border-color: red;
   outline: solid 3px red;
 }
-.fighter:hover img,
+
 .fighterActive img {
   transform: scale(1.1);
 }
