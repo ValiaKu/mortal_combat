@@ -1,4 +1,4 @@
-.fighter-selection-box {
+.fighterSelectionBox {
   display: grid;
   grid-template-columns: repeat(5, auto);
   grid-template-rows: repeat(3, auto);
@@ -65,10 +65,12 @@ h2 {
   transition: 0.8s;
 }
 
-.fighter:hover {
+.fighter:hover,
+.fighterActive {
   border-color: red;
   outline: solid 3px red;
 }
-.fighter:hover img {
+.fighter:hover img,
+.fighterActive img {
   transform: scale(1.1);
 }

@@ -1,7 +1,35 @@
+import { useEffect } from "react";
+
 import { v4 as uuid } from "uuid";
-import "./FighterSelectionScene.scss";
+import styles from "./FighterSelectionScene.module.scss";
 
 function FighterSelectionScene() {
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      switch (event.key) {
+        case "ArrowLeft":
+          console.log("arrow left");
+          break;
+        case "ArrowRight":
+          console.log("arrow right");
+          break;
+        case "ArrowUp":
+          console.log("arrow up");
+          break;
+        case "ArrowDown":
+          console.log("arrow down");
+          break;
+
+        default:
+          break;
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
   const fighters = [
     {
       id: uuid(),
@@ -84,9 +112,9 @@ function FighterSelectionScene() {
   return (
     <>
       <h2>Fighters</h2>
-      <div className='fighter-selection-box'>
+      <div className={styles.fighterSelectionBox}>
         {fighters.map((fighter) => (
-          <div className='fighter' key={fighter.id}>
+          <div key={fighter.id} className={styles.fighter}>
             <span>{fighter.name}</span>
             <img src={fighter.image} alt={fighter.name} />
           </div>
