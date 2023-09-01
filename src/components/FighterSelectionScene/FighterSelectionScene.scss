@@ -1,0 +1,29 @@
+.fighter-selection-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  border: solid 10px gainsboro;
+  gap: 10px;
+}
+
+.fighter {
+  padding: 0;
+  cursor: pointer;
+  margin: 0;
+  border: solid 1px gainsboro;
+  height: 200px;
+  width: 150px;
+  overflow: hidden;
+  position: relative;
+}
+
+.fighter span {
+  position: absolute;
+  bottom: 5px;
+  font-size: 1.5rem;
+}
+
+.fighter img {
+  width: 200px;
+}
