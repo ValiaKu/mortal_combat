@@ -3,18 +3,22 @@ import clsx from "clsx";
 import { v4 as uuid } from "uuid";
 import styles from "./FighterSelectionScene.module.scss";
 
-function FighterSelectionScene() {
+function FighterSelectionScene({ onFighterSelect }) {
   const [selectedFighterIndex, setSelectedFighterIndex] = useState(0);
 
   useEffect(() => {
     const handleKeyDown = (event) => {
       switch (event.key) {
         case "ArrowLeft":
-          setSelectedFighterIndex((prevIndex) => prevIndex - 1);
+          setSelectedFighterIndex((prevIndex) =>
+            prevIndex > 0 ? prevIndex - 1 : fighters.length - 1
+          );
           console.log("arrow left");
           break;
         case "ArrowRight":
-          setSelectedFighterIndex((prevIndex) => prevIndex + 1);
+          setSelectedFighterIndex((prevIndex) =>
+            prevIndex < fighters.length - 1 ? prevIndex + 1 : 0
+          );
           console.log("arrow right");
           break;
         case "ArrowUp":
@@ -28,6 +32,9 @@ function FighterSelectionScene() {
             prevIndex > fighters.length - 5 ? prevIndex - 5 : prevIndex + 5
           );
           console.log("arrow down", selectedFighterIndex);
+          break;
+        case "Enter":
+          onFighterSelect(fighters[selectedFighterIndex]);
           break;
 
         default:
