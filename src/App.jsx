@@ -8,21 +8,25 @@ import "./App.css";
 function App() {
   const reset = () => console.log("reset");
 
-  const [selectedFighter, setSelectedFighter] = useState(null);
+  const [selectedFighter, setSelectedFighter] = useState({});
 
   const handleFighterSelect = (fighter) => {
-    // setSelectedFighter(fighter);
-    console.log(fighter);
+    setSelectedFighter(fighter);
+    console.log(selectedFighter.name);
   };
 
   return (
     <main>
       <HeaderWithStatus turn={0} />
       <FighterSelectionScene onFighterSelect={handleFighterSelect} />
-      <div className='selected-fighter'>
-        <h2>Selected Fighter:</h2>
-        {/* <h3>{selectedFighter.name}</h3> */}
-      </div>
+      {selectedFighter && (
+        <div className='selected-fighter'>
+          <h2>Selected Fighter:</h2>
+          <img src={selectedFighter.image} alt={selectedFighter.name} />
+          <h3>{selectedFighter.name}</h3>
+        </div>
+      )}
+
       <ResetButton reset={reset} />
     </main>
   );
