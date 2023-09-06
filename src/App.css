@@ -25,3 +25,16 @@ body {
   height: 400px;
   width: auto;
 }
+.codeSelected {
+  cursor: pointer;
+}
+.codeSelected.Q {
+  background-image: url(./assets/images/icons/code_scull.png);
+  background-color: white;
+  cursor: pointer;
+}
+.codeSelected.W,
+.codeSelected.E {
+  background-image: url(./assets/images/icons/code_mk.png);
+  cursor: pointer;
+}

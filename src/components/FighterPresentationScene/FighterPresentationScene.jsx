@@ -1,5 +1,6 @@
 import styles from "./FighterPresentationScene.module.scss";
 import { useEffect, useState } from "react";
+import VersusCodeIcons from "../../components/VersusCodeIcons/VersusCodeIcons.jsx"; // Adjust the import path
 
 function FighterPresentaionScene({ image, name }) {
   const [selectedSymbolIndex, setSelectedSymbolIndex] = useState("q");
@@ -13,18 +14,18 @@ function FighterPresentaionScene({ image, name }) {
   ];
   // Список символів
 
-  useEffect(() => {
-    const handleKeyDown = (event) => {
-      if (symbols.includes(event.key)) {
-        setSelectedSymbolIndex(event.key);
-      }
-    };
+  // useEffect(() => {
+  //   const handleKeyDown = (event) => {
+  //     if (symbols.includes(event.key)) {
+  //       setSelectedSymbolIndex(event.key);
+  //     }
+  //   };
 
-    window.addEventListener("keydown", handleKeyDown);
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [selectedSymbolIndex]);
+  //   window.addEventListener("keydown", handleKeyDown);
+  //   return () => {
+  //     window.removeEventListener("keydown", handleKeyDown);
+  //   };
+  // }, [selectedSymbolIndex]);
 
   return (
     <div className={styles.root}>
@@ -44,7 +45,7 @@ function FighterPresentaionScene({ image, name }) {
         <h3>Scorpion</h3>
       </div>
 
-      <section className={styles.buttons}>
+      {/* <section className={styles.buttons}>
         {symbols.map((symbol) => (
           <button
             key={symbol.id}
@@ -54,7 +55,8 @@ function FighterPresentaionScene({ image, name }) {
             {symbol.symbol}
           </button>
         ))}
-      </section>
+      </section> */}
+      <VersusCodeIcons />
     </div>
   );
 }

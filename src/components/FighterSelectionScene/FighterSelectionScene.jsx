@@ -40,7 +40,7 @@ function FighterSelectionScene({ onFighterSelect }) {
             // Виклик функції для переходу на другий екран з  затримкою 2 секунди
             onFighterSelect(fighters[selectedFighterIndex]);
             audioSelected.play();
-          }, 2000);
+          }, 1000);
 
           break;
 

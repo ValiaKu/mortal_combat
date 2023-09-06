@@ -1,0 +1,23 @@
+.versusCodeIcons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 90px;
+  left: calc(50% - 120px);
+}
+
+button {
+  background-image: url(../../assets/images/mk-logo.png);
+  background-size: 35px 35px;
+  background-color: black;
+  background-repeat: no-repeat;
+  border: solid 3px silver;
+  border-right: none;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+button:last-child {
+  border-right: solid 3px silver;
+}

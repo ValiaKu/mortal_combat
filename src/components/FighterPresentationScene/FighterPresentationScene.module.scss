@@ -49,25 +49,3 @@ h3 {
   padding: 30px;
   background-color: #000;
 }
-button {
-  background-image: url(../../assets/images/mk-logo.png);
-  background-size: 35px 35px;
-  background-color: black;
-  background-repeat: no-repeat;
-  border: solid 3px silver;
-  border-right: none;
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-}
-button:last-child {
-  border-right: solid 3px silver;
-}
-.buttons {
-  position: absolute;
-  bottom: 80px;
-  left: calc(50% - 120px);
-}
-button.codeSelected {
-  background-image: url(../../assets/images/code_selected.png);
-}
