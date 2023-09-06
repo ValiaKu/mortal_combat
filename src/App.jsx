@@ -29,7 +29,7 @@ function App() {
     if (showFighterPresentation) {
       const timer = setTimeout(() => {
         setShowFighterPresentation(false);
-      }, 60000); // Показ екрану 2 триває 6 секунд
+      }, 6000); // Показ екрану 2 триває 6 секунд
 
       return () => {
         clearTimeout(timer);
