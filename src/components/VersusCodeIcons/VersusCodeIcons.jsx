@@ -3,12 +3,12 @@ import clsx from "clsx";
 import styles from "../../components/VersusCodeIcons/VersusCodeIcons.module.scss";
 
 function VersusCodeIcons() {
-  const symbols = ["Q", "
+  const symbols = ["Q", "W", "E"];
+
   const [selectedSymbolIndex, setSelectedSymbolIndex] = useState(null);
 
   const handleSymbolSelection = (index) => {
     setSelectedSymbolIndex(index);
-   
   };
 
   return (
