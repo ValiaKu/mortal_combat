@@ -1,22 +1,30 @@
-import { useState } from "react";
-import PropTypes from "prop-types";
-
-import styles from "../../components/FighterPresentationScene/FighterPresentationScene.module.scss";
+import styles from "./FighterPresentationScene.module.scss";
+import { useEffect, useState } from "react";
 
 function FighterPresentaionScene({ image, name }) {
-  const [selectedSymbolIndex, setSelectedSymbolIndex] = useState(0);
+  const [selectedSymbolIndex, setSelectedSymbolIndex] = useState("q");
+  const symbols = [
+    { id: 1, name: "q" },
+    { id: 2, name: "w" },
+    { id: 3, name: "e" },
+    { id: 4, name: "r" },
+    { id: 5, name: "t" },
+    { id: 6, name: "y" },
+  ];
+  // Список символів
 
-  const symbols = ["Q", "W", "E", "R", "T", "Y"]; // Список символів
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (symbols.includes(event.key)) {
+        setSelectedSymbolIndex(event.key);
+      }
+    };
 
-  const handleKeyDown = (event) => {
-    if (event.key === "ArrowLeft") {
-      setSelectedSymbolIndex(
-        (prevIndex) => (prevIndex - 1 + symbols.length) % symbols.length
-      );
-    } else if (event.key === "ArrowRight") {
-      setSelectedSymbolIndex((prevIndex) => (prevIndex + 1) % symbols.length);
-    }
-  };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selectedSymbolIndex]);
 
   return (
     <div className={styles.root}>
@@ -36,23 +44,19 @@ function FighterPresentaionScene({ image, name }) {
         <h3>Scorpion</h3>
       </div>
 
-      <section className='buttons'>
-        {symbols.map((symbol, index) => (
+      <section className={styles.buttons}>
+        {symbols.map((symbol) => (
           <button
-            key={symbol}
-            className={selectedSymbolIndex === index ? "selected" : ""}
-            onKeyDown={handleKeyDown}>
-            {symbol}
+            key={symbol.id}
+            className={
+              selectedSymbolIndex === symbol.name ? styles.codeSelected : ""
+            }>
+            {symbol.symbol}
           </button>
         ))}
       </section>
     </div>
   );
 }
-
-FighterPresentaionScene.propTypes = {
-  image: PropTypes.string,
-  name: PropTypes.string,
-};
 
 export default FighterPresentaionScene;

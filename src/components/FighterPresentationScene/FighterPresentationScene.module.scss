@@ -54,7 +54,6 @@ button {
   background-size: 35px 35px;
   background-color: black;
   background-repeat: no-repeat;
-
   border: solid 3px silver;
   border-right: none;
   display: inline-block;
@@ -68,4 +67,7 @@ button:last-child {
   position: absolute;
   bottom: 80px;
   left: calc(50% - 120px);
+}
+button.codeSelected {
+  background-image: url(../../assets/images/code_selected.png);
 }
