@@ -21,7 +21,6 @@ function App() {
       setTimeout(() => {
         setShowFighterPresentation(true);
       }, 2000); // Перехід через 2 секунди
-      console.log("Transfer 2 s");
     }
   }, [selectedFighter]);
 
@@ -30,8 +29,7 @@ function App() {
     if (showFighterPresentation) {
       const timer = setTimeout(() => {
         setShowFighterPresentation(false);
-      }, 40000); // Показ екрану 2 триває 4 секунди
-      console.log("Duration 4 s");
+      }, 6000); // Показ екрану 2 триває 6 секунд
 
       return () => {
         clearTimeout(timer);
