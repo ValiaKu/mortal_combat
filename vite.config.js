@@ -3,6 +3,6 @@ import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/mortal_combat/",
+  base: "https://valiaku.github.io/mortal_combat",
   plugins: [react()],
 });

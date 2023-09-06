@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-import styles from "./FighterPresentationScene.module.scss";
+import styles from "../../components/FighterPresentationScene/FighterPresentationScene.module.scss";
 
 function FighterPresentaionScene({ image, name }) {
   const [selectedSymbolIndex, setSelectedSymbolIndex] = useState(0);

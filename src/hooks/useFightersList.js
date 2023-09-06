@@ -6,78 +6,78 @@ function useFightersList() {
     {
       id: uuid(),
       name: "Scorpion",
-      image: "/content/characters/scorpio.png",
+      image: "./content/characters/scorpio.png",
     },
     {
       id: uuid(),
       name: "Sub-Zero",
-      image: "/content/characters/subzero.png",
+      image: "./content/characters/subzero.png",
     },
     {
       id: uuid(),
       name: "Kano",
-      image: "/content/characters/kano.png",
+      image: "./content/characters/kano.png",
     },
 
     {
       id: uuid(),
       name: "Cyrex",
-      image: "/content/characters/cyrex.png",
+      image: "./content/characters/cyrex.png",
     },
     {
       id: uuid(),
       name: "Goro",
-      image: "/content/characters/goro.png",
+      image: "./content/characters/goro.png",
     },
     {
       id: uuid(),
       name: "Jade",
-      image: "/content/characters/jade.png",
+      image: "./content/characters/jade.png",
     },
     {
       id: uuid(),
       name: "Jax",
-      image: "/content/characters/jax.png",
+      image: "./content/characters/jax.png",
     },
     {
       id: uuid(),
       name: "Kitana",
-      image: "/content/characters/kitana.png",
+      image: "./content/characters/kitana.png",
     },
     {
       id: uuid(),
       name: "Liu Kang",
-      image: "/content/characters/liukang.png",
+      image: "./content/characters/liukang.png",
     },
     {
       id: uuid(),
       name: "Nightwolf",
-      image: "/content/characters/nightwolf.png",
+      image: "./content/characters/nightwolf.png",
     },
     {
       id: uuid(),
       name: "Raiden",
-      image: "/content/characters/raiden.png",
+      image: "./content/characters/raiden.png",
     },
     {
       id: uuid(),
       name: "Sonia",
-      image: "/content/characters/sonia.png",
+      image: "./content/characters/sonia.png",
     },
     {
       id: uuid(),
       name: "Shan-Tsun",
-      image: "/content/characters/shantsun.png",
+      image: "./content/characters/shantsun.png",
     },
     {
       id: uuid(),
       name: "Sheeva",
-      image: "/content/characters/sheeva.png",
+      image: "./content/characters/sheeva.png",
     },
     {
       id: uuid(),
       name: "Sindel",
-      image: "/content/characters/sindel.png",
+      image: "./content/characters/sindel.png",
     },
   ]);
 

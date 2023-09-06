@@ -1,5 +1,5 @@
 import Logo from "../../assets/images/mk-logo.png";
-import "./Header.scss";
+import "../../components/Header/Header.scss";
 
 const Header = () => {
   return (

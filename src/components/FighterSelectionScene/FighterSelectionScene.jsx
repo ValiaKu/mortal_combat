@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 
 import clsx from "clsx";
 import { v4 as uuid } from "uuid";
-import styles from "./FighterSelectionScene.module.scss";
+import styles from "../../components/FighterSelectionScene/FighterSelectionScene.module.scss";
 import useFightersList from "../../hooks/useFightersList";
 
 function FighterSelectionScene({ onFighterSelect }) {
   const [selectedFighterIndex, setSelectedFighterIndex] = useState(0);
 
-  const audioSelected = new Audio("/public/content/sounds/select.mp3");
+  const audioSelected = new Audio("./content/sounds/select.mp3");
 
   const fighters = useFightersList();
 
