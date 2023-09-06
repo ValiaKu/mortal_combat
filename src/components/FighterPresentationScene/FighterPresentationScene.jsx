@@ -1,8 +1,11 @@
+import { useState } from "react";
+import PropTypes from "prop-types";
+
 import styles from "./FighterPresentationScene.module.scss";
-import { useEffect, useState } from "react";
 
 function FighterPresentaionScene({ image, name }) {
   const [selectedSymbolIndex, setSelectedSymbolIndex] = useState(0);
+
   const symbols = ["Q", "W", "E", "R", "T", "Y"]; // Список символів
 
   const handleKeyDown = (event) => {
@@ -46,5 +49,10 @@ function FighterPresentaionScene({ image, name }) {
     </div>
   );
 }
+
+FighterPresentaionScene.propTypes = {
+  image: PropTypes.string,
+  name: PropTypes.string,
+};
 
 export default FighterPresentaionScene;

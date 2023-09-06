@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
+
 import clsx from "clsx";
 import { v4 as uuid } from "uuid";
 import styles from "./FighterSelectionScene.module.scss";
 import useFightersList from "../../hooks/useFightersList";
-import Logo from "../../assets/images/mk-logo.png";
 
 function FighterSelectionScene({ onFighterSelect }) {
   const [selectedFighterIndex, setSelectedFighterIndex] = useState(0);
@@ -29,13 +29,15 @@ function FighterSelectionScene({ onFighterSelect }) {
           break;
         case "ArrowUp":
           setSelectedFighterIndex((prevIndex) =>
-            prevIndex < 5 ? fighters.length - 5 : prevIndex - 5
+            prevIndex < 5 ? prevIndex + 10 : prevIndex - 5
           );
           console.log("arrow up", selectedFighterIndex);
           break;
         case "ArrowDown":
           setSelectedFighterIndex((prevIndex) =>
-            prevIndex > fighters.length - 5 ? prevIndex - 5 : prevIndex + 5
+            prevIndex > fighters.length - 5
+              ? fighters.length - 10
+              : prevIndex + 5
           );
           console.log("arrow down", selectedFighterIndex);
           break;
