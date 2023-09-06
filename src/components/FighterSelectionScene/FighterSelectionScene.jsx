@@ -35,9 +35,7 @@ function FighterSelectionScene({ onFighterSelect }) {
           break;
         case "ArrowDown":
           setSelectedFighterIndex((prevIndex) =>
-            prevIndex > fighters.length - 5
-              ? fighters.length - 10
-              : prevIndex + 5
+            prevIndex > fighters.length - 5 ? prevIndex - 10 : prevIndex + 5
           );
           console.log("arrow down", selectedFighterIndex);
           break;
