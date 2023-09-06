@@ -1,0 +1,71 @@
+.root {
+  font-size: 60px;
+  color: red;
+  display: grid;
+  grid-template-areas:
+    "a a"
+    "b c";
+  position: relative;
+}
+.root h1 {
+  grid-area: a;
+  text-align: center;
+  color: black;
+  font-size: 2rem;
+  margin-top: 100px;
+}
+.root h1::after {
+  content: "vs";
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  font-size: 140px;
+  color: black;
+  transform: rotate(-20deg);
+}
+.selectedFighter {
+  grid-area: b;
+}
+.selectedFighter + .selectedFighter {
+  grid-area: c;
+}
+.imgWrapper {
+  height: 400px;
+  overflow: hidden;
+}
+.imgWrapper img {
+  width: 600px;
+}
+img[src*="scor"] {
+  position: relative;
+  top: -200px;
+}
+
+h3 {
+  font-size: 2rem;
+  text-align: center;
+  color: #fff;
+  margin: 0;
+  padding: 30px;
+  background-color: #000;
+}
+button {
+  background-image: url(../../assets/images/mk-logo.png);
+  background-size: 35px 35px;
+  background-color: black;
+  background-repeat: no-repeat;
+
+  border: solid 3px silver;
+  border-right: none;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+button:last-child {
+  border-right: solid 3px silver;
+}
+.buttons {
+  position: absolute;
+  bottom: 80px;
+  left: calc(50% - 120px);
+}

@@ -15,3 +15,13 @@ body {
   font-family: MKX, sans-serif;
   font-size: 1rem;
 }
+.selected-fighter {
+  position: absolute;
+  top: 550px;
+  left: 10px;
+  text-align: center;
+}
+.selected-fighter img {
+  height: 400px;
+  width: auto;
+}

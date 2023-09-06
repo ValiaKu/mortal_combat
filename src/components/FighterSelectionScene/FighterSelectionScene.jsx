@@ -3,9 +3,12 @@ import clsx from "clsx";
 import { v4 as uuid } from "uuid";
 import styles from "./FighterSelectionScene.module.scss";
 import useFightersList from "../../hooks/useFightersList";
+import Logo from "../../assets/images/mk-logo.png";
 
 function FighterSelectionScene({ onFighterSelect }) {
   const [selectedFighterIndex, setSelectedFighterIndex] = useState(0);
+
+  const audioSelected = new Audio("/public/content/sounds/select.mp3");
 
   const fighters = useFightersList();
 
@@ -37,7 +40,14 @@ function FighterSelectionScene({ onFighterSelect }) {
           console.log("arrow down", selectedFighterIndex);
           break;
         case "Enter":
-          onFighterSelect(fighters[selectedFighterIndex]);
+          setTimeout(() => {
+            // Виклик функції для переходу на другий екран з  затримкою 2 секунди
+            onFighterSelect(fighters[selectedFighterIndex]);
+            audioSelected.play();
+
+            console.log("test");
+          }, 2000);
+
           break;
 
         default:
