@@ -31,15 +31,13 @@ function FighterSelectionScene({ onFighterSelect, onFighterHover }) {
           setSelectedFighterIndex((prevIndex) =>
             prevIndex < 5 ? prevIndex + 10 : prevIndex - 5
           );
-          onFighterHover(fighters[selectedFighterIndex]);
-          console.log("ArrowUp", selectedFighterIndex);
+          onFighterHover((prevIndex) => fighters[selectedFighterIndex - 5]);
           break;
         case "ArrowDown":
           setSelectedFighterIndex((prevIndex) =>
             prevIndex > fighters.length - 5 ? prevIndex - 10 : prevIndex + 5
           );
-          onFighterHover(fighters[selectedFighterIndex]);
-          console.log("ArrowDown", selectedFighterIndex);
+          onFighterHover((prevIndex) => fighters[selectedFighterIndex + 5]);
           break;
         case "Enter":
           setTimeout(() => {
