@@ -36,7 +36,7 @@
 .imgWrapper img {
   width: 600px;
 }
-img[src*="scor"] {
+.selectedFighter img[src*="scor"] {
   position: relative;
   top: -200px;
 }

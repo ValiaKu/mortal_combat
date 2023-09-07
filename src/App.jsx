@@ -5,14 +5,22 @@ import Header from "./components/Header/Header.jsx";
 
 import "./App.css";
 import FighterPresentaionScene from "./components/FighterPresentationScene/FighterPresentationScene.jsx";
+import OneFighter from "./components/OneFighter/OneFighter.jsx";
 
 function App() {
   const [selectedFighter, setSelectedFighter] = useState(null);
 
+  const [hoveredFighter, setHoveredFighter] = useState(null);
+
   const [showFighterPresentation, setShowFighterPresentation] = useState(false);
 
   const handleFighterSelect = (fighter) => {
+    setHoveredFighter(false);
     setSelectedFighter(fighter);
+  };
+
+  const handleFighterHover = (fighter) => {
+    setHoveredFighter(fighter);
   };
 
   useEffect(() => {
@@ -42,10 +50,17 @@ function App() {
       <Header />
 
       {!selectedFighter && (
-        <FighterSelectionScene onFighterSelect={handleFighterSelect} />
+        <FighterSelectionScene
+          onFighterSelect={handleFighterSelect}
+          onFighterHover={handleFighterHover}
+        />
       )}
 
-      {showFighterPresentation && (
+      {hoveredFighter && (
+        <OneFighter image={hoveredFighter.image} name={hoveredFighter.name} />
+      )}
+
+      {selectedFighter && (
         <FighterPresentaionScene
           image={selectedFighter.image}
           name={selectedFighter.name}

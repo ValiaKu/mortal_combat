@@ -5,7 +5,7 @@ import { v4 as uuid } from "uuid";
 import styles from "../../components/FighterSelectionScene/FighterSelectionScene.module.scss";
 import useFightersList from "../../hooks/useFightersList";
 
-function FighterSelectionScene({ onFighterSelect }) {
+function FighterSelectionScene({ onFighterSelect, onFighterHover }) {
   const [selectedFighterIndex, setSelectedFighterIndex] = useState(0);
 
   const audioSelected = new Audio("./content/sounds/select.mp3");
@@ -19,28 +19,34 @@ function FighterSelectionScene({ onFighterSelect }) {
           setSelectedFighterIndex((prevIndex) =>
             prevIndex > 0 ? prevIndex - 1 : fighters.length - 1
           );
+          onFighterHover(fighters[selectedFighterIndex - 1]);
           break;
         case "ArrowRight":
           setSelectedFighterIndex((prevIndex) =>
             prevIndex < fighters.length - 1 ? prevIndex + 1 : 0
           );
+          onFighterHover((prevIndex) => fighters[selectedFighterIndex + 1]);
           break;
         case "ArrowUp":
           setSelectedFighterIndex((prevIndex) =>
             prevIndex < 5 ? prevIndex + 10 : prevIndex - 5
           );
+          onFighterHover(fighters[selectedFighterIndex]);
+          console.log("ArrowUp", selectedFighterIndex);
           break;
         case "ArrowDown":
           setSelectedFighterIndex((prevIndex) =>
             prevIndex > fighters.length - 5 ? prevIndex - 10 : prevIndex + 5
           );
+          onFighterHover(fighters[selectedFighterIndex]);
+          console.log("ArrowDown", selectedFighterIndex);
           break;
         case "Enter":
           setTimeout(() => {
             // Виклик функції для переходу на другий екран з  затримкою 2 секунди
             onFighterSelect(fighters[selectedFighterIndex]);
             audioSelected.play();
-          }, 1000);
+          }, 2000);
 
           break;
 
